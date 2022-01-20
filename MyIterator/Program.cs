@@ -8,7 +8,7 @@ namespace MyIterator
     {
         object IEnumerator.Current => Current();
 
-        // Returns the key of the current element
+        // Returns the index of the current element
         public abstract int Key();
 
         // Returns the current element

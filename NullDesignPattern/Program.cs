@@ -82,4 +82,28 @@ namespace NullDesignPattern
             return mobile;
         }
     }
+    internal class AppleIPhone : IMobile 
+    {
+        public void TurnOff()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TurnOn()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    internal class SonyXperia : IMobile
+    {
+        public void TurnOff()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TurnOn()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

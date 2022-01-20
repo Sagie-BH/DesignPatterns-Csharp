@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Web;
 
 namespace LanguageInterpreter
 {
@@ -11,6 +12,14 @@ namespace LanguageInterpreter
 			var domainLanguage = "order x10 '2L water bottles' from Tesco";
             Console.WriteLine(Order.Parse(domainLanguage));
 
+			var a = "&amp; bla bla bla bla &qut;";
+			var c = a.Replace("&amp;", "&");
+			var b = HttpUtility.UrlDecode(a);
+			while  (b != a)
+            {
+				a = b;
+				b = HttpUtility.UrlDecode(a);
+            }
 		}
     }
 

@@ -6,26 +6,36 @@ namespace NullPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MyClassA a = new MyClassA();
+            Console.WriteLine(a.MyClassB.Prop); // this will display the default text we inputted at creation time
+            a.MyClassB.Prop = "456"; // this will throw an exception if we tried and changed it
+        }
+        class MyClassA
+        {
+            public MyClassB MyClassB { get; set; } = MyClassB.None;
+        }
+
+        class MyClassB
+        {
+            private string _propValue = string.Empty;
+
+            public static MyClassB None { get; } = new MyClassB
+            {
+                Prop = "123" // example of default data for our null object
+            };
+
+            public string Prop
+            {
+                get { return _propValue; }
+                set
+                {
+                    if (this == None)
+                    {
+                        throw new InvalidOperationException($"Cannot set {nameof(Prop)} on instance of {nameof(None)}");
+                    }
+                    _propValue = value;
+                }
+            }
         }
     }
-
-    //public class Customer
-    //{
-    //    private int OrderCount;
-    //    private string TotalSales;
-    //    public static Customer NotFound =
-    //       new Customer() { OrderCount = 0, TotalSales = "0m" };
-    //    // other properties and behavior
-    //    public Customer GetByPhoneNumber(string phoneNumber)
-    //    {
-    //        return _customerRepository
-    //               .List(c => c.PhoneNumber == phoneNumber)
-    //               .FirstOrDefault();
-    //    }
-    //    var customer = GetByPhoneNumber(phone);
-
-    //    int orderCount = customer != null ? customer.OrderCount : 0;
-    //    decimal totalPurchase = customer != null ? customer.TotalPurchase : 0m;
-    //}
 }
