@@ -9,10 +9,10 @@ namespace StateWithoutFlyweight
         {
 			var btn = ButtonProvider.GetButton<string[]>("settings", ButtonProvider.SettingsButtonFactory);
 
-
 			btn.Click(new[] { "option1", "option2", "option3", "option4" });
 		}
     }
+
 	public class Icon
 	{
 		public Icon(string type)
@@ -34,8 +34,8 @@ namespace StateWithoutFlyweight
 
 			return (Button<T>)_cache[type];
 		}
-		public static SettingsButton SettingsButtonFactory() => new SettingsButton();
 
+		public static SettingsButton SettingsButtonFactory() => new SettingsButton();
 	}
 
 

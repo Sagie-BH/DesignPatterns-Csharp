@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace Facade.Services.UserRepositories
 {
-    public class DatabaseUserRepository
+    public interface IRepository
+    {
+        Task<User> GetByUsername(string username);
+    }
+
+    public class DatabaseUserRepository : IRepository
     {
         private readonly UsersDbContext _context;
 

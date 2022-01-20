@@ -7,6 +7,7 @@ namespace MenuDecorator
     {
         IEnumerable<IMenuItem> Items { get; }
     }
+
     public class Menu : IMenu
     {
         public IEnumerable<IMenuItem> Items { get; }
@@ -16,6 +17,10 @@ namespace MenuDecorator
             Items = menuItems;
         }
     }
+
+
+
+
     public class DiscountMenu : IMenu
     {
         private readonly IMenu _menu;

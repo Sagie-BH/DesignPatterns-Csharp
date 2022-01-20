@@ -9,6 +9,7 @@ namespace FlyweightProblem
             Console.WriteLine("Hello World!");
         }
     }
+
 	public class Icon
 	{
 		public Icon(string path)

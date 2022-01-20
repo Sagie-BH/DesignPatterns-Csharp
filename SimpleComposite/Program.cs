@@ -14,9 +14,6 @@ namespace SimpleComposite
     // and SongGroup (Composite) we create
     public abstract class SongComponent
     {
-
-
-
         // We throw UnsupportedOperationException so that if
         // it doesn't make sense for a song, or song group
         // to inherit a method they can just inherit the

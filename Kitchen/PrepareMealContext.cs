@@ -10,7 +10,7 @@ namespace Madness
         BigMac PrepareBigMac();
     }
 
-    public class PrepareMealContext
+    public class PrepareMealContext : IPrepareMealContext
     {
         public BigMac PrepareBigMac()
         {

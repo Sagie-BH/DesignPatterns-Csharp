@@ -12,6 +12,7 @@ namespace Proxy.Services
         private readonly IBlogPostService _blogPostService;
         private readonly Lazy<Task<IEnumerable<BlogPost>>> _getAllLazy;
 
+
         public CachingBlogPostService(IBlogPostService blogPostService)
         {
             _blogPostService = blogPostService;

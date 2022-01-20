@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace Proxy
 {
+    /*
+     Proxy and Decorator differ in purpose and where they focus on the internal implementation. 
+     Proxy is for using a remote, cross process, or cross-network object as if it were a local object.
+     Decorator is for adding new behavior to the original interface.
+
+     While both patterns are similar in structure,
+     the bulk of the complexity of Proxy lies in ensuring proper communications with the source object.
+     Decorator, on the other hand, focuses on the implementation of the added behavior.
+     */
     class Program
     {
         static async Task Main(string[] args)

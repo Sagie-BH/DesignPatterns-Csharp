@@ -10,10 +10,21 @@ namespace FlyweightSolution
             Console.WriteLine("Hello World!");
         }
     }
+	public interface IICon
+    {
+
+    }
 	// flyweight
-	public class Icon
+	public class Icon: IICon
 	{
 		public Icon(string type)
+		{
+			// load icon
+		}
+	}
+	public class LogoIcon : IICon
+	{
+		public LogoIcon(string type)
 		{
 			// load icon
 		}
@@ -29,7 +40,6 @@ namespace FlyweightSolution
 			{
 				_cache[type] = new Icon(type);
 			}
-
 			return _cache[type];
 		}
 	}

@@ -10,7 +10,7 @@ public class MySimpleSingleton
 }
 
 
-public class MySingletonWithLock
+public sealed class MySingletonWithLock
 {
     private readonly static object _myLock = new object();
 
@@ -29,6 +29,8 @@ public class MySingletonWithLock
         return _instance;
     }
 }
+
+
 
 public class MyAmbientContext
 {

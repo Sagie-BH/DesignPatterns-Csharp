@@ -11,10 +11,10 @@ namespace Facade.Services
 {
     public class ProfileReaderFacade
     {
-        private readonly DatabaseUserRepository _userRepository;
-        private readonly FileUserPreferencesRepository _userPreferencesRepository;
+        private readonly IRepository _userRepository;
+        private readonly IFileUserPreferencesRepository _userPreferencesRepository;
 
-        public ProfileReaderFacade(DatabaseUserRepository userRepository, FileUserPreferencesRepository userPreferencesRepository)
+        public ProfileReaderFacade(IRepository userRepository, IFileUserPreferencesRepository userPreferencesRepository)
         {
             _userRepository = userRepository;
             _userPreferencesRepository = userPreferencesRepository;
@@ -29,6 +29,7 @@ namespace Facade.Services
         public async Task<Profile> GetByUsername(string username)
         {
             User user = await _userRepository.GetByUsername(username);
+
             UserPreferences preferences = await _userPreferencesRepository.GetByUserId(user.Id);
 
             if (preferences.IsPrivate)

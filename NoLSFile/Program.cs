@@ -14,7 +14,8 @@ namespace NoLSFile
             AccessDataFile accessDataFileR = new RegularDataFileUser();
             accessDataFileR.FilePath = @"c:\temp\a.txt";
             accessDataFileR.ReadFile();
-            accessDataFileR.WriteFile();  // Throws exception  
+            accessDataFileR.WriteFile();  // Throws exception
+
         }
     }
     public class AccessDataFile

@@ -36,7 +36,21 @@ namespace Client_Bridge
                 base._implementation.OperationImplementation();
         }
     }
+    //class ExtendedAbstraction : Abstraction
+    //{
+    //    private readonly IImplementation implementation;
 
+    //    public ExtendedAbstraction(IImplementation implementation)
+    //    {
+    //        this.implementation = implementation;
+    //    }
+
+    //    public override string Operation()
+    //    {
+    //        return "ExtendedAbstraction: Extended operation with:\n" +
+    //            base._implementation.OperationImplementation();
+    //    }
+    //}
     // The Implementation defines the interface for all implementation classes.
     // It doesn't have to match the Abstraction's interface. In fact, the two
     // interfaces can be entirely different. Typically the Implementation

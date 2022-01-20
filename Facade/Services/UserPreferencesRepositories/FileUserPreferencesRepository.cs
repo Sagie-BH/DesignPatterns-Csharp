@@ -9,7 +9,12 @@ using System.Threading.Tasks;
 
 namespace Facade.Services.UserPreferencesRepositories
 {
-    public class FileUserPreferencesRepository
+    public interface IFileUserPreferencesRepository
+    {
+        Task<UserPreferences> GetByUserId(Guid userId);
+    }
+
+    public class FileUserPreferencesRepository : IFileUserPreferencesRepository
     {
         private const string USERS_DIRECTORY_NAME = "users";
         private const string USER_PREFERENCES_FILE_NAME = "preferences.json";

@@ -27,7 +27,11 @@ namespace DecoratorWrapper
 	{
 		protected IDumbData data;
 
-		public BaseDecrator(IDumbData data) => this.data = data;
+        public BaseDecrator(IDumbData data)
+        {
+			this.data = data;
+        }
+		//public BaseDecrator(IDumbData data) => this.data = data;
 
 		public virtual int Id { get => data.Id; set => data.Id = value; }
 		public virtual string Name { get => data.Name; set => data.Name = value; }

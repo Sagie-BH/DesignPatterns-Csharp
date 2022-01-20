@@ -17,6 +17,7 @@ namespace PrototypeEmployee
             Console.WriteLine("Emplpyee 2: ");
             Console.WriteLine("Name: " + emp2.Name + ", Department: " + emp2.Department);
             Console.Read();
+
         }
     }
     public class Employee

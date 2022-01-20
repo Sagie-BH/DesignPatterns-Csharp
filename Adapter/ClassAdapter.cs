@@ -13,6 +13,7 @@ namespace Adapter
     {
         public ClassAdapter(SendGridClientOptions options) : base(options)
         {
+
         }
 
         public Task NotifyUser(string userId, string message)

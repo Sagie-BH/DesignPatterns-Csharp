@@ -12,8 +12,10 @@ namespace RecursiveGenericsFluent
                         .WithSalary(3500)
                         .Build();
             Console.WriteLine(emp);
+
         }
     }
+
     public class Employee
     {
         public string Name { get; set; }
@@ -24,6 +26,16 @@ namespace RecursiveGenericsFluent
             return $"Name: {Name}, Position: {Position}, Salary: {Salary}";
         }
     }
+
+    public static class Ex
+    {
+        public static Employee GetSteamSomtimes(this Employee employee)
+        {
+            // Do somthing
+            return employee;
+        }
+    }
+
     public abstract class EmployeeBuilder
     {
         protected Employee employee;
