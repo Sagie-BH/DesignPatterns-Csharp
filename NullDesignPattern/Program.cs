@@ -10,7 +10,7 @@ namespace NullDesignPattern
             //  return;
             // do some work();
 
-            var mobileRepository = new MobileRepository();
+            var mobileRepository = new MobileFactory();
             IMobile mobile = mobileRepository.GetMobileByName("sony");
             mobile.TurnOn();
             mobile.TurnOff();
@@ -60,7 +60,7 @@ namespace NullDesignPattern
         public void TurnOn()
         { }
     }
-    public class MobileRepository
+    public class MobileFactory
     {
         public IMobile GetMobileByName(string mobileName)
         {
